@@ -15,7 +15,8 @@ export default function useSigningLogic(apiFunction, redirectUrl) {
     // Fetch client name for greeting
     const fetchClientName = useCallback(async () => {
         try {
-            const r = await fetch(`${API_URL}hearty-happiness-production.up.railway.app/api/sign/session/${token}`);
+            const r = await fetch(`${API_URL}/api/sign/session/${token}`);
+
             if (r.ok) {
                 const { name } = await r.json();
                 if (name) setClientName(name);
