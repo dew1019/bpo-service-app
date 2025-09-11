@@ -1,0 +1,131 @@
+/* Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Distributes items with space between them */
+    align-items: center; /* Vertically centers items */
+    padding: 10px 30px; /* Adjust padding as needed */
+
+    /* --- IMPORTANT CHANGE: Removed properties for fixed position --- */
+    /*
+    position: fixed; // REMOVED: This was making it stay at the top on scroll
+    top: 0;          // REMOVED
+    left: 0;         // REMOVED
+    width: 100%;     // REMOVED: Will now take width based on parent container
+    z-index: 1000;   // REMOVED (no longer needed without fixed position)
+    */
+
+    /* Secondary background color from your palette (#002f5f), with 90% opacity */
+    background-color: rgba(0, 47, 95, 0.9);
+    box-shadow: none; /* Removes any default or previous box shadow */
+
+    height: 80px; /* Fixed height for the navbar */
+    box-sizing: border-box; /* Ensures padding doesn't increase total width */
+
+    /* Explicitly remove any default browser margins */
+    margin: 0;
+}
+
+.navbar-section {
+    display: flex;
+    align-items: center;
+}
+
+.left-section {
+    flex: 1;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.center-section {
+    flex: 1;
+    justify-content: center;
+}
+
+.right-section {
+    flex: 1;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.navbar-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    white-space: nowrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #e0e0e0;
+}
+
+/* Optional: Responsive adjustments for smaller screens */
+@media (max-width: 900px) {
+    .navbar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 15px;
+        justify-content: center;
+    }
+
+    .left-section,
+    .right-section,
+    .center-section {
+        flex-grow: 0;
+        width: 100%;
+        justify-content: center;
+        margin: 5px 0;
+    }
+
+    .left-section {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .right-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .navbar-text {
+        font-size: 0.9rem;
+    }
+
+    .logo-image {
+        height: 50px;
+    }
+}

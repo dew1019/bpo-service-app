@@ -1,0 +1,164 @@
+.addons-intro-container {
+    padding: 24px;
+    background-color: #f9fcfd;
+    border-radius: 0px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    max-width: 1200px;
+    margin: 20px auto 40px;
+}
+
+.addons-heading {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 12px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.addons-description {
+    font-size: 1.05rem;
+    color: #4a5b6b;
+    line-height: 1.7;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+/* Responsive grid like the mock */
+.addons-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 980px;
+    margin: 0 auto 22px;
+    padding: 0 10px;
+}
+
+@media (max-width: 980px){
+    .addons-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px){
+    .addons-list { grid-template-columns: 1fr; }
+}
+
+/* Card look */
+.addon-card {
+    background: #fff;
+    border: 1px solid #eef2f6;
+    border-radius: 0px;
+    padding: 16px 14px;
+    box-shadow: 0 8px 24px rgba(2, 24, 55, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform .15s ease, box-shadow .15s ease, border-color .2s ease;
+    position: relative;
+    cursor: pointer;
+    height: 250px;
+    justify-content: space-between;
+}
+
+.addon-card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(2,24,55,.08); }
+.addon-card.selected { border-color: #00aeef; box-shadow: 0 12px 32px rgba(0,174,239,.15); }
+
+/* top-right select dot */
+.select-dot{
+    position: absolute;
+    top: 10px; right: 10px;
+    width: 14px; height: 14px; border-radius: 999px;
+    border: 2px solid #cad5e2; background: #fff; transition: all .2s ease;
+}
+.select-dot.on{ border-color:#00aeef; background:#00aeef; box-shadow:0 0 0 3px rgba(0,174,239,.18); }
+
+.addon-visual-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.addon-image-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 0px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    background-color: #eaf6ff;
+    border: 2px solid #bfe5ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.addon-image { width: 100%; height: 100%; object-fit: cover; }
+
+.addon-info { width: 100%; text-align: center; }
+.addon-name {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1b2430;
+    min-height: 2.6em;
+    line-height: 1.3;
+}
+.addon-price {
+    margin: 6px 0 0;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #00aeef;
+}
+
+/* Buttons */
+.add-btn, .remove-btn {
+    width: 80%;
+    padding: 8px 10px;
+    font-size: .85rem;
+    font-weight: 700;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all .2s ease;
+    text-transform: uppercase;
+    align-self: center;
+}
+.add-btn { background:#00aeef; color:#fff; border:1px solid #00aeef; }
+.add-btn:hover { background:#008dc2; border-color:#008dc2; }
+.remove-btn { background:#f0f3f7; color:#1b2430; border:1px solid #d8e2ee; }
+.remove-btn:hover { background:#e3eaf4; }
+
+/* Footer actions (no totals) */
+.addon-actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+.addon-actions button {
+    padding: 10px 20px;
+    font-size: .95rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    background-color: #002F5F;
+    color: white;
+    transition: background-color .2s ease, transform .05s ease;
+}
+.addon-actions button:hover { background-color: #001F3F; }
+.addon-actions button:active { transform: translateY(1px); }
+
+/* Banner */
+.header-banner3 {
+    width: 100%;
+    height: 40vh;
+    background-image: url('https://videos.openai.com/vg-assets/assets%2Ftask_01k0qynbk4ektay51ngmgv4nej%2F1753150600_img_1.webp?st=2025-07-22T00%3A41%3A24Z&se=2025-07-28T01%3A41%3A24Z&sks=b&skt=2025-07-22T00%3A41%3A24Z&ske=2025-07-28T01%3A41%3A24Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=0J%2FGHr%2FxHIrDhVa2fTgcjTTFiQfM5bJfcbbSBX4NHZU%3D&az=oaivgprodscus');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+}
+
+/* Page bg */
+.addonPage { background: #f7f9fc; min-height: 100vh; }
